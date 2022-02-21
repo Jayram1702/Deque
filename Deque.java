@@ -49,7 +49,13 @@ public class Deque<Item> implements Iterable<Item> {
     }
 
     // remove and return the item from the front
-    public Item removeFirst()
+    public Item removeFirst(){
+        if(isEmpty()) throw new NoSuchElementException(); 
+        Item item = first.item;
+        first = first.next;
+        lenth = lenth - 1;
+        return item;    
+    }
 
     // remove and return the item from the back
     public Item removeLast()
