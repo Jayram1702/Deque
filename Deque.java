@@ -1,13 +1,32 @@
+import java.util.*;
 public class Deque<Item> implements Iterable<Item> {
+    
+    private Node first, last;
+    int lenth ;
+    private class Node{
+        Item item;
+        Node next;
+    }
 
     // construct an empty deque
-    public Deque()
+    public Deque(){
+        first = null;
+        last = null;
+        lenth = 0;
+    }
 
     // is the deque empty?
-    public boolean isEmpty()
+    public boolean isEmpty(){
+        if (first == null && last == null){
+            return true;
+        }
+        return false;
+    }
 
     // return the number of items on the deque
-    public int size()
+    public int size(){
+        return lenth;
+    }
 
     // add the item to the front
     public void addFirst(Item item)
@@ -26,6 +45,4 @@ public class Deque<Item> implements Iterable<Item> {
 
     // unit testing (required)
     public static void main(String[] args)
-
-}
 
